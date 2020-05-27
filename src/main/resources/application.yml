@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: jenkins1
+          uri: http://localhost:8085
+          predicates:
+            - Jenkins=instance1
+
+        - id: jenkins2
+          uri: http://localhost:8086
+          predicates:
+            - Jenkins=instance2
+server:
+  port: 9999
